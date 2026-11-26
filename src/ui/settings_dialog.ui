@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ui version="4.0">
+ <class>settingsDialog</class>
+ <widget class="QDialog" name="settingsDialog">
+  <property name="windowTitle">
+   <string>Settings | Shear Pin Forces &amp; Pressures Calculator</string>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>510</width>
+    <height>360</height>
+   </size>
+  </property>
+  <layout class="QVBoxLayout" name="settingsLayout">
+   <item>
+    <widget class="QLabel" name="heading">
+     <property name="text">
+      <string>Settings</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 17px; font-weight: 700; color: #164f8a;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="settings_heading_rule">
+     <property name="frameShape">
+      <enum>QFrame::Shape::HLine</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Plain</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="settings_app_name">
+     <property name="text">
+      <string>Shear Pin Forces &amp; Pressures Calculator</string>
+     </property>
+     <property name="styleSheet">
+      <string>color:#71849a; font-size:11px;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="settings_tabs">
+     <widget class="QWidget" name="assumptions_tab">
+      <attribute name="title">
+       <string>Assumptions</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="assumptionsLayout">
+       <item>
+        <widget class="QScrollArea" name="assumptions_scroll">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::NoFrame</enum>
+         </property>
+         <widget class="QWidget" name="assumptions_content">
+          <layout class="QVBoxLayout" name="assumptionsContentLayout">
+           <property name="leftMargin">
+            <number>3</number>
+           </property>
+           <property name="rightMargin">
+            <number>3</number>
+           </property>
+           <property name="topMargin">
+            <number>3</number>
+           </property>
+           <property name="bottomMargin">
+            <number>3</number>
+           </property>
+           <item><widget class="QLabel" name="assumptions_heading_0"><property name="text"><string>Scope</string></property><property name="styleSheet"><string>font-weight:600; color:#164f8a;</string></property></widget></item><item><widget class="QLabel" name="assumptions_text_0"><property name="textFormat"><enum>Qt::TextFormat::RichText</enum></property><property name="text"><string>&lt;html&gt;&lt;body&gt;&lt;p&gt;Estimates the minimum and maximum shear failure forces of identical pins and, where annulus dimensions are provided, the corresponding differential pressures.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+<item><spacer name="assumptionsSectionGap1"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Fixed</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item><item><widget class="QLabel" name="assumptions_heading_1"><property name="text"><string>Calculation basis</string></property><property name="styleSheet"><string>font-weight:600; color:#164f8a;</string></property></widget></item><item><widget class="QLabel" name="assumptions_text_1"><property name="textFormat"><enum>Qt::TextFormat::RichText</enum></property><property name="text"><string>&lt;html&gt;&lt;body&gt;&lt;p&gt;• Ultimate shear strength is estimated from UTS using the selected shear strength factor.&lt;/p&gt;&lt;p&gt;• Equal load sharing is assumed across all pins and shear planes.&lt;/p&gt;&lt;p&gt;• Minimum and maximum results account for the governing material properties and dimensional limits.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+<item><spacer name="assumptionsSectionGap2"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Fixed</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item><item><widget class="QLabel" name="assumptions_heading_2"><property name="text"><string>Interpretation</string></property><property name="styleSheet"><string>font-weight:600; color:#164f8a;</string></property></widget></item><item><widget class="QLabel" name="assumptions_text_2"><property name="textFormat"><enum>Qt::TextFormat::RichText</enum></property><property name="text"><string>&lt;html&gt;&lt;body&gt;&lt;p&gt;• The selected factor represents an estimated material relationship rather than a safety factor.&lt;/p&gt;&lt;p&gt;• Pressure results assume the differential pressure acts over the specified effective annular area. Minimum OD must exceed maximum ID; zero ID represents a solid pressure area.&lt;/p&gt;&lt;p&gt;• Friction, bending, bearing, stress concentrations and other failure modes are excluded.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+           <item>
+            <spacer name="assumptions_inner_spacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Expanding</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+          <property name="styleSheet">
+           <string>QWidget#assumptions_content { background: white; }</string>
+          </property>
+         </widget>
+         <property name="styleSheet">
+          <string>QScrollArea#assumptions_scroll { background: white; border: none; } QScrollArea#assumptions_scroll &gt; QWidget &gt; QWidget { background: white; }</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="references_tab">
+      <attribute name="title">
+       <string>References</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="referencesLayout">
+       <item>
+        <widget class="QScrollArea" name="references_scroll">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Shape::NoFrame</enum>
+         </property>
+         <widget class="QWidget" name="references_content">
+          <layout class="QVBoxLayout" name="referencesContentLayout">
+           <property name="leftMargin">
+            <number>3</number>
+           </property>
+           <property name="rightMargin">
+            <number>3</number>
+           </property>
+           <property name="topMargin">
+            <number>3</number>
+           </property>
+           <property name="bottomMargin">
+            <number>3</number>
+           </property>
+           <item><widget class="QLabel" name="references_heading_0"><property name="text"><string>Ultimate shear strength</string></property><property name="styleSheet"><string>font-weight:600; color:#164f8a;</string></property></widget></item><item><widget class="QLabel" name="references_text_0"><property name="textFormat"><enum>Qt::TextFormat::RichText</enum></property><property name="text"><string>&lt;html&gt;&lt;body&gt;&lt;p&gt;Richard T. Barrett, &lt;i&gt;Fastener Design Manual&lt;/i&gt;, NASA Reference Publication 1228, March 1990, p. 21, “Approximate Bearing and Shear Allowables”.&lt;/p&gt;&lt;p&gt;In the absence of material-specific shear data, the manual gives ultimate shear-to-tensile strength ratios of 0.60 for carbon and alloy steels and 0.55 for stainless steels.&lt;/p&gt;&lt;p&gt;&lt;a href="https://ntrs.nasa.gov/citations/19900009424"&gt;NASA Technical Reports Server&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property><property name="wordWrap"><bool>true</bool></property><property name="openExternalLinks"><bool>true</bool></property></widget></item>
+<item><spacer name="referencesSectionGap1"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Fixed</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item><item><widget class="QLabel" name="references_heading_1"><property name="text"><string>Yield criteria</string></property><property name="styleSheet"><string>font-weight:600; color:#164f8a;</string></property></widget></item><item><widget class="QLabel" name="references_text_1"><property name="textFormat"><enum>Qt::TextFormat::RichText</enum></property><property name="text"><string>&lt;html&gt;&lt;body&gt;&lt;p&gt;For pure shear, Tresca predicts yielding at 0.5 × tensile yield strength; von Mises predicts yielding at tensile yield strength / √3 (approximately 0.577). These are yield criteria, not ultimate fracture relationships. The calculator estimates ultimate shear failure rather than onset of yielding.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+<item><spacer name="referencesSectionGap2"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Fixed</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>20</height></size></property></spacer></item><item><widget class="QLabel" name="references_heading_2"><property name="text"><string>Selection of shear strength factor</string></property><property name="styleSheet"><string>font-weight:600; color:#164f8a;</string></property></widget></item><item><widget class="QLabel" name="references_text_2"><property name="textFormat"><enum>Qt::TextFormat::RichText</enum></property><property name="text"><string>&lt;html&gt;&lt;body&gt;&lt;p&gt;The default is 0.6. Use material-specific ultimate shear data or representative pin test results where available. The factor is an estimate, not a safety factor or proof of a required release-pressure window. A lower factor does not necessarily give a conservative release-pressure prediction.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+           <item>
+            <spacer name="references_inner_spacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Expanding</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>0</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+          <property name="styleSheet">
+           <string>QWidget#references_content { background: white; }</string>
+          </property>
+         </widget>
+         <property name="styleSheet">
+          <string>QScrollArea#references_scroll { background: white; border: none; } QScrollArea#references_scroll &gt; QWidget &gt; QWidget { background: white; }</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="updates_tab">
+      <attribute name="title"><string>Updates</string></attribute>
+      <layout class="QVBoxLayout" name="updatesLayout">
+       <item><widget class="QLabel" name="current_version"><property name="text"><string>Current version: v2.0.0</string></property></widget></item>
+       <item><spacer name="updates_version_to_checkbox_gap"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Fixed</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>12</height></size></property></spacer></item><item><widget class="QCheckBox" name="check_on_launch"><property name="text"><string>Automatically check for updates on launch</string></property></widget></item>
+       <item><spacer name="updates_checkbox_to_information_gap"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Fixed</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>12</height></size></property></spacer></item><item><widget class="QLabel" name="update_information"><property name="text"><string>Checks stable GitHub Releases in the background. Updates are not downloaded or installed automatically; the application remains portable.</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+       <item><spacer name="updates_information_to_status_gap"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Fixed</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>8</height></size></property></spacer></item><item><widget class="QLabel" name="update_status"><property name="text"><string>Not checked yet</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
+       <item><spacer name="updates_status_to_buttons_gap"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Fixed</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>14</height></size></property></spacer></item><item><layout class="QHBoxLayout" name="updateButtonLayout">
+        <item><widget class="QPushButton" name="check_now_button"><property name="text"><string>Check for updates</string></property></widget></item>
+        <item><widget class="QPushButton" name="open_release_button"><property name="text"><string>Download update</string></property><property name="enabled"><bool>false</bool></property></widget></item>
+        <item><spacer name="updateButtonSpacer"><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>0</height></size></property></spacer></item>
+       </layout></item>
+       <item><spacer name="updatesSpacer"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>40</height></size></property></spacer></item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="about_tab">
+      <attribute name="title">
+       <string>About</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="aboutLayout">
+       <item>
+        <widget class="QLabel" name="about_text">
+         <property name="text">
+          <string>ZeroFlagLabs Shear Pin Forces &amp; Pressures Calculator | v2.0.0
+
+Original application code is distributed under the MIT Licence.
+
+PySide6/Qt and other third-party components retain their own licences.</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item><spacer name="about_github_section_gap"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Fixed</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>16</height></size></property></spacer></item><item><widget class="QLabel" name="github_link"><property name="text"><string>Project on GitHub</string></property></widget></item>
+       <item>
+        <spacer name="aboutSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttons">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::StandardButton::Close</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources />
+ <connections />
+</ui>

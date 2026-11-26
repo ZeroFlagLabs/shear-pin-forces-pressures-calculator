@@ -1,0 +1,17 @@
+/venv/
+/.venv/
+/_ui_preview/
+/docs/private/
+/references/
+/releases/
+/build/
+/dist/
+__pycache__/
+*.pyc
+
+*.exe
+*.zip
+*.spec
+*.lnk
+.pytest_cache/
+/_*.py

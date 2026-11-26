@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ui version="4.0">
+ <class>InspectResults</class>
+ <widget class="QDialog" name="InspectResults">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Inspect Results | Shear Pin Forces &amp; Pressures Calculator</string>
+  </property>
+  <layout class="QVBoxLayout" name="inspectionLayout">
+   <property name="spacing">
+    <number>8</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="inspect_heading">
+     <property name="text">
+      <string>Inspect Results</string>
+     </property>
+     <property name="styleSheet">
+      <string>font-size:17px; font-weight:700; color:#164f8a;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="inspect_heading_rule">
+     <property name="frameShape">
+      <enum>QFrame::Shape::HLine</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="inspect_app_name">
+     <property name="text">
+      <string>Shear Pin Forces &amp; Pressures Calculator</string>
+     </property>
+     <property name="styleSheet">
+      <string>color:#71849a; font-size:11px;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="result_tabs">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="minimum_tab">
+      <attribute name="title"><string>Minimum</string></attribute>
+      <layout class="QVBoxLayout" name="minimumLayout">
+       <item>
+        <layout class="QHBoxLayout" name="minimumSelector">
+         <item><spacer name="minimum_spacer"><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
+         <item><layout class="QVBoxLayout" name="minimumPrecisionLayout">
+          <property name="spacing"><number>4</number></property>
+          <item><widget class="QLabel" name="minimum_precision_label"><property name="text"><string>Precision</string></property></widget></item>
+          <item><widget class="PrecisionCombo" name="minimum_precision"><property name="minimumSize"><size><width>210</width><height>0</height></size></property></widget></item>
+         </layout></item>
+        </layout>
+       </item>
+       <item><widget class="QTextBrowser" name="minimum_text"><property name="readOnly"><bool>true</bool></property></widget></item>
+       <item><widget class="QLabel" name="minimum_disclaimer">
+        <property name="styleSheet"><string>color:#657a91; font-size:10px;</string></property>
+        <property name="text"><string>Full calculation precision is retained; displayed values are rounded to the selected precision.</string></property>
+       </widget></item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="maximum_tab">
+      <attribute name="title"><string>Maximum</string></attribute>
+      <layout class="QVBoxLayout" name="maximumLayout">
+       <item>
+        <layout class="QHBoxLayout" name="maximumSelector">
+         <item><spacer name="maximum_spacer"><property name="orientation"><enum>Qt::Orientation::Horizontal</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property></spacer></item>
+         <item><layout class="QVBoxLayout" name="maximumPrecisionLayout">
+          <property name="spacing"><number>4</number></property>
+          <item><widget class="QLabel" name="maximum_precision_label"><property name="text"><string>Precision</string></property></widget></item>
+          <item><widget class="PrecisionCombo" name="maximum_precision"><property name="minimumSize"><size><width>210</width><height>0</height></size></property></widget></item>
+         </layout></item>
+        </layout>
+       </item>
+       <item><widget class="QTextBrowser" name="maximum_text"><property name="readOnly"><bool>true</bool></property></widget></item>
+       <item><widget class="QLabel" name="maximum_disclaimer">
+        <property name="styleSheet"><string>color:#657a91; font-size:10px;</string></property>
+        <property name="text"><string>Full calculation precision is retained; displayed values are rounded to the selected precision.</string></property>
+       </widget></item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="inspectionButtons">
+     <item>
+      <spacer name="inspectionSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="close_inspection">
+       <property name="text">
+        <string>Close</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget><class>PrecisionCombo</class><extends>QComboBox</extends><header>inspect_results</header></customwidget>
+ </customwidgets>
+ <resources />
+ <connections />
+</ui>
