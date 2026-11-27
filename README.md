@@ -1,8 +1,12 @@
 # Shear Pin Forces & Pressures Calculator
 
-**v2.0.0 | ZeroFlagLabs**
+**v2.0.1 | ZeroFlagLabs**
 
 A portable Windows engineering calculator for estimated minimum and maximum direct shear failure loads of identical pins and optional differential release pressures.
+
+## v2.0.1 dialogue consistency maintenance
+
+Standardised dialogue formatting and content, modern scrollbars, consistent update checkboxes and About/Updates information. Inspector dropdowns use native Windows 11 appearance, release focus on selection or dismissal and retain the reading position when precision changes. Calculation methods and data are unchanged.
 
 ## Download
 

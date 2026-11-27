@@ -32,7 +32,7 @@ def render_snapshot(data,timestamp=None):
     try:
         p.setPen(QPen(QColor("#9FBBD5"),1));p.drawRect(QRectF(5,5,W-11,H-11))
         text(24,13,535,36,TITLE,size=22,bold=True,colour=BLUE)
-        text(560,16,206,30,timestamp.strftime("%d %b %Y  %H:%M")+"  |  v2.0.0",size=11,colour=MUTED,align="right")
+        text(560,16,206,30,timestamp.strftime("%d %b %Y  %H:%M")+"  |  v2.0.1",size=11,colour=MUTED,align="right")
         line(57)
         heading(24,68,350,"CONFIGURATION")
         pair(24,93,350,"Number of pins",data.pins,145)

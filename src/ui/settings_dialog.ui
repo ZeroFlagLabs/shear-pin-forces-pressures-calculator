@@ -163,7 +163,7 @@
      <widget class="QWidget" name="updates_tab">
       <attribute name="title"><string>Updates</string></attribute>
       <layout class="QVBoxLayout" name="updatesLayout">
-       <item><widget class="QLabel" name="current_version"><property name="text"><string>Current version: v2.0.0</string></property></widget></item>
+       <item><widget class="QLabel" name="current_version"><property name="text"><string>Current version: v2.0.1</string></property></widget></item>
        <item><spacer name="updates_version_to_checkbox_gap"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Fixed</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>12</height></size></property></spacer></item><item><widget class="QCheckBox" name="check_on_launch"><property name="text"><string>Automatically check for updates on launch</string></property></widget></item>
        <item><spacer name="updates_checkbox_to_information_gap"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Fixed</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>12</height></size></property></spacer></item><item><widget class="QLabel" name="update_information"><property name="text"><string>Checks stable GitHub Releases in the background. Updates are not downloaded or installed automatically; the application remains portable.</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
        <item><spacer name="updates_information_to_status_gap"><property name="orientation"><enum>Qt::Orientation::Vertical</enum></property><property name="sizeType"><enum>QSizePolicy::Fixed</enum></property><property name="sizeHint" stdset="0"><size><width>20</width><height>8</height></size></property></spacer></item><item><widget class="QLabel" name="update_status"><property name="text"><string>Not checked yet</string></property><property name="wordWrap"><bool>true</bool></property></widget></item>
@@ -183,11 +183,14 @@
        <item>
         <widget class="QLabel" name="about_text">
          <property name="text">
-          <string>ZeroFlagLabs Shear Pin Forces &amp; Pressures Calculator | v2.0.0
+          <string>ZeroFlagLabs Shear Pin Forces &amp; Pressures Calculator  ·  v2.0.1
 
-Original application code is distributed under the MIT Licence.
+Estimates minimum and maximum direct shear failure loads of identical pins and optional differential release pressures.
 
-PySide6/Qt and other third-party components retain their own licences.</string>
+Portable Windows application.
+
+Original application code: MIT Licence.
+PySide6/Qt and other third-party components retain their own licences. Any third-party reference datasets retain their respective rights and licences.</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>

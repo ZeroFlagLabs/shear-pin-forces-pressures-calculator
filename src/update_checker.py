@@ -39,7 +39,7 @@ class UpdateChecker(QObject):
     def check(self):
         if self._reply is not None:
             return
-        self.status = 'Checking GitHub Releasesâ€¦'
+        self.status = 'Checking GitHub Releases…'
         self.state_changed.emit()
         request = QNetworkRequest(QUrl(RELEASES_URL))
         request.setRawHeader(b'User-Agent', b'ZeroFlagLabs-Shear-Pin-Calculator')

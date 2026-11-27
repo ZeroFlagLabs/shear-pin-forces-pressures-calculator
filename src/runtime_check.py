@@ -1,5 +1,6 @@
 """Frozen application acceptance checks."""
 import sys,json,traceback,math
+from app_info import APP_VERSION
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from PySide6.QtCore import QSize,QSettings,QEventLoop,QTimer,Qt,QPoint,QMimeData
@@ -11,7 +12,11 @@ def run(app,w):
     report={}
     try:
         QTest.qWait(80)
-        assert w.size()==QSize(678,380) and not w.windowIcon().isNull()
+        # Match the previously validated adaptive font-metric layout.
+        assert w.size()==w.sizeHint() and w.height()==380 and not w.windowIcon().isNull()
+        if w.devicePixelRatioF()==1.0:assert w.width()==678
+        elif w.devicePixelRatioF() in (1.25,1.5):assert w.width()==677
+        report['window_size']=list(w.size().toTuple())
         assert w.factor.text()=="0.6" and w.qty.text()=="0" and w.planes.text()=="1"
         assert w.calculation is None and all(not b.isEnabled() for b in w.output_actions)
         assert not w.findChild(QPushButton,"gear").icon().pixmap(18,18).isNull()
@@ -69,7 +74,7 @@ def run(app,w):
             w.update_checker.prefs=QSettings(str(Path(t)/"prefs.ini"),QSettings.Format.IniFormat)
             d=w.make_settings();d.show();app.processEvents()
             assert d.settings_tabs.count()==4 and d.github_link.openExternalLinks()
-            assert d.current_version.text()=="Current version: v2.0.0"
+            assert d.current_version.text()=="Current version: v"+APP_VERSION
             assert d.buttons.button(QDialogButtonBox.StandardButton.Close).size()==QSize(106,30)
             d.check_on_launch.setChecked(False);assert not w.update_checker.enabled()
             d.reject()

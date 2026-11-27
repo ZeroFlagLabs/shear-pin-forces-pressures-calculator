@@ -8,6 +8,7 @@ OPTION=APP_VERSION
 from inspect_results import case_steps,html_breakdown
 from PySide6.QtTest import QTest
 from PySide6.QtCore import QPoint
+from PySide6.QtGui import QCursor
 from PySide6.QtWidgets import QComboBox
 app=make_app();w=Window();w.show();QTest.qWait(50)
 assert w.factor.text()=='0.6'
@@ -32,7 +33,7 @@ for value in ('0','1.01',''):
 w.sample()
 for force_only in (False,True):
     if force_only:w.od.reset();w.id.reset();w.calculate()
-    d=w.make_inspector();d.show();QTest.qWait(80)
+    d=w.make_inspector();d.show();d.activateWindow();QTest.qWait(120)
     expected=None
     for i in (0,1,0,1):
         d.result_tabs.setCurrentIndex(i);QTest.qWait(30)
@@ -45,10 +46,12 @@ for force_only in (False,True):
             assert rect==expected,(rect,expected)
         check()
         box.setFocus();QTest.qWait(20);check()
-        QTest.mouseClick(box,Qt.MouseButton.LeftButton,pos=QPoint(box.width()-10,box.height()//2));QTest.qWait(30)
+        pt=QPoint(box.width()-10,box.height()//2);QCursor.setPos(box.mapToGlobal(pt));QTest.qWait(40)
+        QTest.keyClick(box,Qt.Key.Key_Down,Qt.KeyboardModifier.AltModifier);QTest.qWait(160)
+        if not box.view().isVisible():QTest.mouseClick(box,Qt.MouseButton.LeftButton,pos=pt);QTest.qWait(160)
         assert box.view().isVisible();check()
-        QTest.mouseClick(box.view().viewport(),Qt.MouseButton.LeftButton,pos=box.view().visualRect(box.model().index(6,0)).center());QTest.qWait(20);assert d.isVisible();check()
-        box.setCurrentIndex(6);QTest.qWait(20);check()
+        pt=box.view().visualRect(box.model().index(6,0)).center();QCursor.setPos(box.view().viewport().mapToGlobal(pt));QTest.qWait(40)
+        QTest.mouseClick(box.view().viewport(),Qt.MouseButton.LeftButton,pos=pt);QTest.qWait(130);assert d.isVisible() and box.currentIndex()==6 and not box.hasFocus();check()
         assert d.minimum_precision.currentIndex()==d.maximum_precision.currentIndex()==6
         box.setCurrentIndex(3)
     print('Precision geometry stable',force_only,expected,flush=True)
